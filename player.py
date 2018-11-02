@@ -1,8 +1,4 @@
 # -*- coding:utf-8 -*-
-<<<<<<< HEAD
-=======
-
->>>>>>> 390967f991f343df36bb4046cbcafa735fbfa377
 import pygame
 import time
 
@@ -30,7 +26,6 @@ class Player:
             bullet.move()
 
     def move_left(self):
-<<<<<<< HEAD
             self.x -= self.speed
 
     def move_right(self):
@@ -41,31 +36,12 @@ class Player:
 
     def move_down(self):
             self.y += self.speed
-=======
-        if self.ismove:
-            self.x -= 8
-
-    def move_right(self):
-        if self.ismove:
-            self.x += 8
-
-    def move_up(self):
-        if self.ismove:
-            self.y -= 8
-
-    def move_down(self):
-        if self.ismove:
-            self.y += 8
->>>>>>> 390967f991f343df36bb4046cbcafa735fbfa377
 
     def fire(self):
         bullet = PlayerBullet(self.screen, self.x, self.y)
         self.bullet_list.append(bullet)
 
-<<<<<<< HEAD
 import pygame.sprite
-=======
->>>>>>> 390967f991f343df36bb4046cbcafa735fbfa377
 class PlayerBullet:
     def __init__(self, screen_temp, x_temp, y_temp):
         self.x = x_temp + 50
@@ -89,26 +65,8 @@ def key_control(player):
         if event.type == pygame.QUIT:
             print("exit")
             exit()
-<<<<<<< HEAD
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-=======
-        elif event.type == pygame.KEYDOWN:
-            player.ismove = True
-            if event.key == pygame.K_LEFT and player.x > 0:
-                print('left')
-                player.move_left()
-            elif event.key == pygame.K_RIGHT and player.x < 360:
-                print('right')
-                player.move_right()
-            elif event.key == pygame.K_UP and player.y > 0:
-                print('UP')
-                player.move_up()
-            elif event.key == pygame.K_DOWN and player.y < 750:
-                print('down')
-                player.move_down()
-            elif event.key == pygame.K_SPACE:
->>>>>>> 390967f991f343df36bb4046cbcafa735fbfa377
                 print('space')
                 player.fire()
             elif event.key == pygame.K_ESCAPE:
